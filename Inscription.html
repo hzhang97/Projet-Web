@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8"/>
+            <title>Formulaire d'inscription</title>
+        </head>
+        <body>
+            <br/>
+            <h1><center><font face="Georgia">Bienvenue à l'ECE !</font></center></h1>
+            <br/>
+            
+            <hr color="black"/>
+            
+            <br/>
+            <br/>
+            <form method="post" action="Connexion.php">
+                <center><div style="width:325px;height:700px;border:2px solid #ABCDF0;background-color:#ABCDF0;">
+                    <br/>
+                    <h2><center><font face="Georgia">Inscrivez-vous</font></center></h2>
+                    <p>
+                        <label for="id"><center><font face="Georgia">Identifiant :</font></center></label>
+                        <center><input type="text" name="id" id="id"/></center>
+                        <br/>
+                        <label for="name"><center><font face="Georgia">Nom :</font></center></label>
+                        <center><input type="text" name="name" id="name"/></center>
+                        <br/>
+                        <label for="surname"><center><font face="Georgia">Prénom :</font></center></label>
+                        <center><input type="text" name="surname" id="surname"/></center>
+                        <br/>
+                        <label for="date"><center><font face="Georgia">Date de naissance :</font></center></label>
+                        <center><input type="text" name="date" id="date"/></center>
+                        <br/>
+                        <label for="email"><center><font face="Georgia">Email :</font></center></label>
+                        <center><input type="text" name="email" id="email"/></center>
+                        <br/>
+                        <label for="password"><center><font face="Georgia">Mot de passe :</font></center></label>
+                        <center><input type="password" name="password" id="password"/></center>
+                        <br/>
+                        <label for="city"><center><font face="Georgia">Ville :</font></center></label>
+                        <center>
+                            <select name="city" id="city">
+                                <option value="par">Paris</option>
+                                <option value="lyo">Lyon</option>
+                                <option value="lon">Londres</option>
+                            </select>
+                        </center>
+                        <br/>
+                        <label for="profilepic"><center><font face="Georgia">Photo de profil :</font></center></label>
+                        <center><input type="file" name="profilepic" id="profilepic"/></center>
+                        <br/>
+                        <label for="photofond"><center><font face="Georgia">Photo de fond :</font></center></label>
+                        <center><input type="file" name="photofond" id="photofond"/></center>
+                        <br/>
+                        <br/>
+                        <center><button onclick="boucle()"><font face="Georgia">S'inscrire</font></button></center>
+                    </p>
+                </div></center>
+            </form>
+        </body>
+</html>
