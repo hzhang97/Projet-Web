@@ -6,26 +6,25 @@
             
             <script>
                 connexion(email,password){
-                    var xhttp;
-                    if ((email == "")||(password="")) {
-                        document.getElementById("text").innerHTML = "Veuillez remplir les champs";
-                        return;
-                    } else {
-                        if (window.XMLHttpRequest) {
-                        // code for IE7+, Firefox, Chrome, Opera, Safari
-                        xmlhttp = new XMLHttpRequest();
-                        }
-                        xmlhttp.onreadystatechange = function() {
-                            if (this.readyState == 4 && this.status == 200) {
-                            document.getElementById("text").innerHTML = this.responseText;
-                                if (document.getElementById("text").innerHTML=="mot de passe correct"){
-                                window.open("accueil.html");
+                    var xhttp;    
+                    // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();    
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                                if ((email.length == 0)||(password.lenght == 0)){
+                                    document.getElementById("text").innerHTML = "Veuillez remplir les champs";
+                                }
+                                else{
+                                    document.getElementById("text").innerHTML = this.responseText;
+                                    if (document.getElementById("text").innerHTML=="mot de passe correct"){
+                                        window.open("accueil.html");
+                                    }
                                 }
                             }
                         };
                         xmlhttp.open("GET","Connexion1.php?q="+email+"$p"+password,true);
                         xmlhttp.send();
-                    }
+                    
                 }
                 
                 inscription(){
@@ -46,7 +45,7 @@
             <br/>
             <br/>
             <br/>
-            <form method="post" action="Connexion.php">
+            <form action="">
                 <center><div style="width:325px;height:450px;border:2px solid #ABCDF0;background-color:#ABCDF0;">
                     <br/>
                     <h2><center><font face="Georgia">Connectez-vous</font></center></h2>
