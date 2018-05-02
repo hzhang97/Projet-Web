@@ -18,6 +18,9 @@
                     xmlhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                             document.getElementById("text").innerHTML = this.responseText;
+                            if (document.getElementById("text").innerHTML=="mot de passe correct"){
+                                window.open("accueil.html");
+                            }
                         }
                     };
                     xmlhttp.open("GET","Connexion1.php?q="+email+"$p"+password,true);
