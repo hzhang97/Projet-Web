@@ -8,7 +8,7 @@
         
 		$sql="SELECT password FROM utilisateur WHERE email='".$email."'";
 		$result = mysqli_query($db_handle,$sql);
-        if (mysql_num_rows($result)>1){echo "Entrez un autre email";};
+        if (mysql_num_rows($result)>1){echo "Cet email est déjà utilisé par un autre utilisateur, veuillez entrez un autre email";};
         else {
             while($row = mysqli_fetch_array($result)) {
                 if ($row[0]==password){
