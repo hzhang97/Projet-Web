@@ -7,12 +7,14 @@
             <script>
                 connexion(email,password){
                     var xhttp;    
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value
                     // code for IE7+, Firefox, Chrome, Opera, Safari
                     xmlhttp = new XMLHttpRequest();    
                     xmlhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
                                 if ((email.length == 0)||(password.lenght == 0)){
-                                    document.getElementById("text").innerHTML = "Veuillez remplir les champs";
+                                    document.getElementById("text").value = "Veuillez remplir les champs";
                                 }
                                 else{
                                     document.getElementById("text").innerHTML = this.responseText;
@@ -22,9 +24,8 @@
                                 }
                             }
                         };
-                        xmlhttp.open("GET","Connexion1.php?q="+email+"$p"+password,true);
-                        xmlhttp.send();
-                    
+                        xhttp.open("GET","Connexion1.php?q="+email+"&$p="+password,true);
+                        xhttp.send();
                 }
                 
                 inscription(){
