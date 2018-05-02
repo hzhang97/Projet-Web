@@ -26,6 +26,10 @@
                     xmlhttp.open("GET","Connexion1.php?q="+email+"$p"+password,true);
                     xmlhttp.send();
                 }
+                inscription(){
+                    window.open("inscritpion.html");
+                }
+                
             </script>
             
         </head>
@@ -60,7 +64,7 @@
                         <center><button onclick="connexion(this.email,this.password)"><font face="Georgia">S'identifier</font></button></center>
                         <br/>
                         <br/>
-                        <center><button onclick="boucle()"><font face="Georgia">S'inscrire</font></button></center>
+                        <center><button onclick="inscription()"><font face="Georgia">S'inscrire</font></button></center>
                     </p>
                 </div></center>
             </form>
