@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <meta charset="utf-8"/>
+            <title>Bienvenue à l'ECE !</title>
+        </head>
+
+<body>
+
+<br/>
+            <h1><center><font face="Georgia">Bienvenue à l'ECE !</font></center></h1>
+            <br/>
+            
+            <hr color="black"/>
+            
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <center><div style="width:325px;height:450px;border:2px solid #ABCDF0;background-color:#ABCDF0;">
+                    <br/>
+                    <h2><center><font face="Georgia">Connectez-vous</font></center></h2>
+                    <br/>
+                    <p>
+                        <label for="email"><center><font face="Georgia">Email :</font></center></label>
+                        <br/>
+                        <center><input type="text" name="email" id="email" onkeyup="connect()"/></center>
+                        <br/>
+                        <br/>
+                        <label for="password"><center><font face="Georgia">Mot de passe :</font></center></label>
+                        <br/>
+                        <center><input type="password" name="password" id="password" onkeyup="connect()"/></center>
+                        <br/>
+                        <span id="val"> </span>
+                        <br/>
+                        <center><button onclick="connexion()"><font face="Georgia">S'identifier</font></button></center>
+                        <br/>
+                        <br/>
+                        <center><button onclick="inscription()"><font face="Georgia">S'inscrire</font></button></center>
+                    </p>
+                </div></center>
+
+
+<script>
+    
+function connect(){
+    document.getElementById("val").style.display = "none";
+    if((document.getElementById("email").value.length == 0)||(document.getElementById("password").value.length == 0)) {
+        document.getElementById("val").innerHTML = "Veuillez remplir les champs";
+        return ;
+    } 
+    else {
+      var xmlhttp;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      xmlhttp = new XMLHttpRequest(); 
+      xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              var resp = xmlhttp.responseText;
+              document.getElementById("val").innerHTML = resp;
+          }
+      };
+      xmlhttp.open("GET","http://localhost:8888/Connexion1.php?q=" + email + "&&p=" + password,true);
+      xmlhttp.send();    
+    }
+}
+
+function connexion() {
+    document.getElementById("val").style.display = "block";
+    if (document.getElementById("val").innerHTML=="mot de passe correct"){
+        window.open("Accueil.html","_self"); 
+    }
+}
+    
+function inscription(){
+       window.open("Inscription.html","_self"); 
+}
+    
+</script>
+    
+</body>
+</html>
+
