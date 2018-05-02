@@ -6,6 +6,7 @@
             
             <script>
                 connexion(email,password){
+                    var xhttp;
                     if ((email == "")||(password="")) {
                         document.getElementById("text").innerHTML = "Veuillez remplir les champs";
                         return;
