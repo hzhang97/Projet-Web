@@ -8,7 +8,7 @@
     if ($db_found)
 	{	
         
-		$sql="SELECT password,id_u FROM utilisateur WHERE email='".$email."'";
+		$sql="SELECT password,id_u,statut FROM utilisateur WHERE email='".$email."'";
 		$result = mysqli_query($db_handle,$sql);
         if (mysqli_num_rows($result)==0){
             echo "Cet email est incorrect, veuillez entrez un autre email";
@@ -21,6 +21,7 @@
                 else {
                     echo "mot de passe correct"; 
                     $_SESSION["id"]= $row["id_u"];
+                    $_SESSION["statut"]= $row["statut"];
                 }
             }
         }
